@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'level',
     ];
 
     /**
@@ -44,4 +45,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+// criamos uma associacao entre a chave primaria id  da tabela users e a chave estrangeira id da tabela socios
+
+    public function socios()
+    {
+        return $this->hasMany(Socio::class);
+    }
+
+
+
+
+
+
 }
