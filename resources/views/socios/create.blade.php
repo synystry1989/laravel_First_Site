@@ -43,7 +43,7 @@
                             <div>
                                 <label for="nome">Nome</label>
                                 <!-- autfocus o cursor vai logo para o input  require obriga a ser preenchido-->
-                                <input class="form-control mb-2" type="text" name="nome" id="nome" require autofocus>
+                                <input class="form-control mb-2" type="text" name="nome" id="nome"  autofocus>
                             </div>
                             <div>
                                 <label for="cc">cartao cidadao</label>
@@ -54,18 +54,18 @@
                             <div>
                                 <label for="morada">Morada</label>
                                 <!-- autfocus o cursor vai logo para o input -->
-                                <input class="form-control mb-2" type="text" name="morada" id="morada" require>
+                                <input class="form-control mb-2" type="text" name="morada" id="morada" >
                             </div>
                                <div>
                                 <label for="codigo_Postal">codigo postal</label>
                                 <!-- autfocus o cursor vai logo para o input -->
-                                <input class="form-control mb-2" type="text" name="codigo_Postal" id="codigo-Postal" require>
+                                <input class="form-control mb-2" type="text" name="codigo_Postal" id="codigo-Postal" >
                             </div>
 
                             <div>
                                 <label for="localidade">localidade</label>
                                 <!-- autfocus o cursor vai logo para o input -->
-                                <input class="form-control mb-2" type="text" name="localidade" id="localidade" require>
+                                <input class="form-control mb-2" type="text" name="localidade" id="localidade" >
                             </div>
                             <div>
                                 <label for="email">email</label>
@@ -75,7 +75,7 @@
                             <div>
                                 <label for="telefone">telemovel</label>
                                 <!-- autfocus o cursor vai logo para o input -->
-                                <input class="form-control mb-2" type="text" name="telefone" id="telefone" require>
+                                <input class="form-control mb-2" type="text" name="telefone" id="telefone" >
                             </div>
 
 

@@ -107,7 +107,7 @@ class SocioController extends Controller
     {
         Socio::findOrFail($id->id)->update($id->all());
         //redirecionar
-        return redirect()->route('socio.user',  Auth ::user()->id)>with('msg', ('socio editado com sucesso'));;
+        return redirect()->route('socio.user',  Auth ::user()->id)->with('msg', ('socio editado com sucesso'));;
     }
 
     /**
