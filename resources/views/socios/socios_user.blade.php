@@ -28,7 +28,7 @@
       <td>{{$socio->user->name}}</td>
       <!-- rota do botao visualizar da view socio.show que vai a funcao criada socio.show no controlador para a view socio.show -->
       <td><a href="{{route('socio.show',$socio->id )}}"class="btn btn-success" >Visualizar</a></td>
-      <td><a href="{{route('socio.socios_edit' )}}"class="btn btn-warning">Editar</a></td>
+      <td><a href="{{route('socio.socios_edit',$socio->id )}}"class="btn btn-warning">Editar</a></td>
       <td><a href="{{route('socio.destroySocio',$socio->id)}}"class="btn btn-danger">Apagar</a></td>
 
     </tr>
@@ -41,7 +41,6 @@
 {{session('msg')}}
 </p >
 @endif
-
 </table>
 
                 </div>
@@ -49,4 +48,4 @@
         </div>
     </div>
 </div>
-@endsection
+git@endsection
