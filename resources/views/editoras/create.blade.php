@@ -13,11 +13,11 @@
 </p >
 @endif
 
-{{-- <p class="btn btn-outline-secondary"><a href="{{route('socio.index')}}" >Listar todos os Sócios</a> --}}
+ <!-- <p class="btn btn-outline-secondary"><a href="{{route('socio.index')}}" >Listar todos os Sócios</a>  -->
 </p>
 
 
-{{-- <p class="btn btn-outline-secondary"><a href="{{route('socio.user', Auth::user()->id)}}">listar os meus socios</a> --}}
+<!-- <p class="btn btn-outline-secondary"><a href="{{route('socio.user', Auth::user()->id)}}">listar os meus socios</a>  -->
 </p>
 
                 <div class="card-body">
