@@ -41,6 +41,25 @@ Route::middleware('auth')->group(function ()
 //rotas para os socios todos
 //rota geral para cada uma das funcoes do controlador socios que foi criada automaticamente
 
+//index dos meus socios
+Route::get('socios_user/{id}', [SocioController::class,'socios_user'])->name('socio.user');
+// rota delete dos meus socios         nome da funcao em socio controler::class
+Route::get('socio_delete/{id}', [SocioController::class,'destroySocio'])->name('socio.destroySocio');
+
+Route::get('confirma_delete/{id}', [SocioController::class,'confirma_delete'])->name('socio.confirma_delete');
+//delete dos socios todos
+// Route::get('socios_delete/{id}', [SocioController::class,'destroy'])->name('socio.destroy');
+//edit dos meus socios
+// Route::get('socio_edit/{id}', [SocioController::class, 'SocioEdit'])->name('socio.socios_edit');
+//edit dos socios gerais
+// Route::get('socios_edit/{id}', [SocioController::class, 'edit'])->name('socio.edit');
+//rota atualizar meus socios
+// Route::put('socio_update/{id}', [SocioController::class, 'update'])->name('socio.update');
+//
+// Route::put('socios_update/{id}', [SocioController::class, 'SociosUpdate'])->name('socio.socios_update');
+
+// Route::put('socio/edit/{id}', [SocioController::class,'socios_user'])->name('socio.mudar');
+
 Route::resources([
 
     // prefixo "socio" para aceder as rotas
@@ -52,14 +71,6 @@ Route::resources([
 
 
 
-//index dos meus socios
-Route::get('socios_user/{id}', [SocioController::class,'socios_user'])->name('socio.user');
-// rota delete dos meus socios         nome da funcao em socio controler::class
-Route::get('socios_delete/{id}', [SocioController::class,'destroySocio'])->name('socio.destroySocio');
-//edit dos meus socios
-Route::get('socios_edit/{id}', [SocioController::class, 'SocioEdit'])->name('socio.socios_edit');
-//rota atualizar meus socios
-Route::put('socios_update/{id}', [SocioController::class, 'SociosUpdate'])->name('socio.socios_update');
 
 
 

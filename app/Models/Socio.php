@@ -11,7 +11,7 @@ class Socio extends Model
 //acrescentar a possibilidade de preencher os campos da tabela
 protected $fillable = [
 
-"name",
+"nome",
 "cc",
 "morada",
 "codigoPostal",

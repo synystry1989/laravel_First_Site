@@ -64,62 +64,80 @@ class SocioController extends Controller
 
     /**
      * Display the specified resource.
+     * funcao para os meus socios
      */
     public function show(Socio $socio)
     {//caminho view pasta socios ficheiro nome show
-        return view('socios.show',['socio'=>$socio]);
+        return view('socios.show',['socio' => Socio::findOrFail($socio->id)]);
     }
+
+    // public function showall(Socio $socio)
+    // {//caminho view pasta socios ficheiro nome show
+    //     return view('socios.showAll',['socio'=>$socio]);
+    // }
+
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit( $id)
+    public function edit(Socio $socio)
     {
-        return view('socios.edit');
+        return view('socios.edit', ['socio' => Socio::findOrFail($socio->id)]);
 
         //  $user = User::where('id',$id->id)->first();
         //  $socios = $user->socios()->get();
         // return view('socios.edit',['socios'=>$socios]);
     }
 
-    public function SocioEdit( $id)
-    {
+//     public function SocioEdit(Socio $socio)
+//     {
 
-        return view('socios.edit', ['socio' => Socio::findOrFail($id)]);
+//  // dd($id); escreve a variavel para se confirmar
+//         return view('socios.edit', ['socio' => Socio::findOrFail($socio->id)]);
 
-       // $user = User::where('id',$id->id)->first();
-       // $socios = $user->socios()->get();
+//        // $user = User::where('id',$id->id)->first();
+//        // $socios = $user->socios()->get();
 
-    }
+//     }
 
     /**
      * Update the specified resource in storage.
      * update para o edit
      */
-    public function update(Request $id)
+    public function update(Request $request, Socio $socio)
     {
-        Socio::findOrFail($id->id)->update($id->all());
-        //redirecionar
-        return redirect()->route('socio.user')->with('msg', ('socio editado com sucesso'));;
+        // dd($socio);
+        // dd($request);
+
+        $socio->update($request->all());
+
+          //redirecionar
+        return redirect()->route('socio.show', $socio)->with('msg', ('socio editado com sucesso'));
     }
 
-    public function SociosUpdate(Request $id)
-    {
-        Socio::findOrFail($id->id)->update($id->all());
-        //redirecionar
-        return redirect()->route('socio.user',  Auth ::user()->id)->with('msg', ('socio editado com sucesso'));;
-    }
+    // public function mudar(Request $request, Socio $socio)
+    // {
+    //     $socio->update($request->all());
+    //     //redirecionar
+    //     dd($socio);
+    //     return redirect()->route('socio.user');
+    // }
+
+     public function confirma_delete(Socio $id){
+
+        return view('socios.confirma_delete',['id'=>$id]);
+     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(socio $id)
-    {
-        $socio = Socio::findOrFail($id->id);
-        $socio->delete();
+    // public function destroy(socio $id)
+    // {
+    //     $socio = Socio::findOrFail($id->id);
+    //     $socio->delete();
 
-        return redirect()->route('socio.user')->with('msg', ('socio eliminado com sucesso'));;
-    }
+    //     return redirect()->route('socio.user')->with('msg', ('socio eliminado com sucesso'));;
+    // }
     public function destroySocio(Socio $id)
     {
         $socio = Socio::findOrFail($id->id);

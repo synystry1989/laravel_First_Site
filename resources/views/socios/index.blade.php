@@ -26,8 +26,8 @@
       <!-- vams buscar o nome ao campo user de users -->
       <td>{{$socio->user->name}}</td>
       <td><a href="{{route('socio.show',$socio->id )}}" class="btn btn-success" >Visualizar</a></td>
-      <td><a href="{{route('socio.edit2',$socio->id )}}"class="btn btn-warning">Editar</a></td>
-      <td><a href=""class="btn btn-danger">Apagar</a></td>
+      {{-- <td><a href="{{route('socio.edit',$socio->id )}}"class="btn btn-warning">Editar</a></td> --}}
+      {{-- <td><a href=""class="btn btn-danger">Apagar</a></td> --}}
     </tr>
 @endforeach
 

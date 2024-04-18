@@ -3,14 +3,13 @@
 @section('content')
 
 <div class="card-body">
-    <form action="{{ route('socio.socios_update', $socio->id) }}" method = "post">
+    <form action="{{ route('socio.update', $socio->id) }}" method = "post">
 
         <!-- para as def seguranca temos que acrescentar -->
         @csrf
         @method('PUT')
-        <fieldset>
 
-            <legend>editar campos</legend>
+            <legend>Editar campos</legend>
 
             @if(session('msg'))
             <p class="btn btn-success">
@@ -66,19 +65,9 @@
                 <button type="submit" class="btn btn-primary" value="gravar">Gravar</button>
 
                 <button type="reset" class="btn btn-primary" value="limpar">limpar</button>
-                
+
 
             </div>
-
-
-
-
-        </fieldset>
-
-
-
-
-
     </form>
 
 
