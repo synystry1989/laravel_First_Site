@@ -28,61 +28,51 @@
 
 
                             <legend>Preencha todos os campos</legend>
+
                             <div>
-                                <!-- autfocus o cursor vai logo para o input
-                        colocar value no campo gestor para colocar o campo id user
-                    campo escondido
-                --> <input class="form-control mb-2" type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                                <label for="id">Id</label>
+                                <!-- autfocus o cursor vai logo para o input  require obriga a ser preenchido-->
+                                <input class="form-control mb-2" type="text" name="id" id="id"  autofocus>
                             </div>
+                          
+
                             <div>
                                 <label for="nome">Nome</label>
                                 <!-- autfocus o cursor vai logo para o input  require obriga a ser preenchido-->
                                 <input class="form-control mb-2" type="text" name="nome" id="nome"  autofocus>
                             </div>
-                            <div>
-                                <label for="cc">cartao cidadao</label>
-                                <!-- autfocus o cursor vai logo para o input -->
-                                <input class="form-control mb-2" type="text" name="cc" require id="cc">
-                            </div>
-
+                          
+                        
+                            
                             <div>
                                 <label for="morada">Morada</label>
                                 <!-- autfocus o cursor vai logo para o input -->
                                 <input class="form-control mb-2" type="text" name="morada" id="morada" >
                             </div>
-                               <div>
-                                <label for="codigo_Postal">codigo postal</label>
-                                <!-- autfocus o cursor vai logo para o input -->
-                                <input class="form-control mb-2" type="text" name="codigo_Postal" id="codigo-Postal" >
-                            </div>
-
+                               
                             <div>
-                                <label for="localidade">localidade</label>
-                                <!-- autfocus o cursor vai logo para o input -->
-                                <input class="form-control mb-2" type="text" name="localidade" id="localidade" >
-                            </div>
-                            <div>
-                                <label for="email">email</label>
-                                <!-- autfocus o cursor vai logo para o input -->
-                                <input class="form-control mb-2" type="email" name="email" require id="email">
-                            </div>
-                            <div>
-                                <label for="telefone">telemovel</label>
+                                <label for="telefone">telefone</label>
                                 <!-- autfocus o cursor vai logo para o input -->
                                 <input class="form-control mb-2" type="text" name="telefone" id="telefone" >
+                            </div>
+                            <div>
+                                <label for="contribuinte">contribuinte</label>
+                                <!-- autfocus o cursor vai logo para o input -->
+                                <input class="form-control mb-2" type="text" name="contribuinte" id="contribuinte" >
                             </div>
 
 
                             <div>
                                 <button type="submit" class="btn btn-primary" value="gravar">Gravar</button>
+                            </div>
+                            <br>
+                            <div style ="text-align: center;">
+                               
 
-                                <button type="reset" class="btn btn-primary" value="limpar">limpar</button>
+                            <p class="btn btn-outline-primary"><a href="{{route('editora.index')}}" >Listar Editoras</a> </p>
 
 
                             </div>
-
-
-
 
                         </fieldset>
 

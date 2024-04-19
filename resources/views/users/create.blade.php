@@ -13,18 +13,9 @@
 </p >
 @endif
 
-
-
-
 <p class="btn btn-outline-secondary"><a href="{{route('user.index')}}" >Listar todos os utilizadores</a>
 </p>
-
-
-
 </p>
-
-
-
 
                 <div class="card-body">
                     <form action="{{route('socio.store')}}" method="post">

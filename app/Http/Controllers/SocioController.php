@@ -83,31 +83,12 @@ class SocioController extends Controller
     public function edit(Socio $socio)
     {
         return view('socios.edit', ['socio' => Socio::findOrFail($socio->id)]);
-
-        //  $user = User::where('id',$id->id)->first();
-        //  $socios = $user->socios()->get();
-        // return view('socios.edit',['socios'=>$socios]);
+      
     }
 
-//     public function SocioEdit(Socio $socio)
-//     {
-
-//  // dd($id); escreve a variavel para se confirmar
-//         return view('socios.edit', ['socio' => Socio::findOrFail($socio->id)]);
-
-//        // $user = User::where('id',$id->id)->first();
-//        // $socios = $user->socios()->get();
-
-//     }
-
-    /**
-     * Update the specified resource in storage.
-     * update para o edit
-     */
     public function update(Request $request, Socio $socio)
     {
-        // dd($socio);
-        // dd($request);
+       
 
         $socio->update($request->all());
 
@@ -115,36 +96,16 @@ class SocioController extends Controller
         return redirect()->route('socio.show', $socio)->with('msg', ('socio editado com sucesso'));
     }
 
-    // public function mudar(Request $request, Socio $socio)
-    // {
-    //     $socio->update($request->all());
-    //     //redirecionar
-    //     dd($socio);
-    //     return redirect()->route('socio.user');
-    // }
-
      public function confirma_delete(Socio $id){
 
         return view('socios.confirma_delete',['id'=>$id]);
      }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    // public function destroy(socio $id)
-    // {
-    //     $socio = Socio::findOrFail($id->id);
-    //     $socio->delete();
-
-    //     return redirect()->route('socio.user')->with('msg', ('socio eliminado com sucesso'));;
-    // }
+ 
     public function destroySocio(Socio $id)
     {
         $socio = Socio::findOrFail($id->id);
         $socio->delete();
         return redirect()->route('socio.user',  Auth ::user()->id)->with('msg', ('socio eliminado com sucesso'));;
-
-
 }
 
 }

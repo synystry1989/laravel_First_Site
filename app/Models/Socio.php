@@ -14,7 +14,7 @@ protected $fillable = [
 "nome",
 "cc",
 "morada",
-"codigoPostal",
+"codigo_Postal",
 "localidade",
 "email",
 "telefone",
@@ -22,7 +22,7 @@ protected $fillable = [
 
 ];
 ////associar o campo user com a tabela users
-
+//relacao para base dados
 public function user()
 {
     //este socio pertence a tabela user

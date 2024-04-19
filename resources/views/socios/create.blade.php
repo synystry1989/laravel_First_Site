@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Criar Socios</div>
+                <div style="text-align:center;font-weight:bold;color:black;font-size: 30px;" class="card-header">Criar Sócios</div>
                 <!-- para aparecer as mensagens -->
 @if(session('msg'))
 <p class="btn btn-success">
@@ -82,10 +82,10 @@
                             <div>
                                 <button type="submit" class="btn btn-primary" value="gravar">Gravar</button>
 
-                                <button type="reset" class="btn btn-primary" value="limpar">limpar</button>
-
 
                             </div>
+
+  
 
 
 

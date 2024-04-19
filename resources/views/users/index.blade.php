@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div style="text-align:center; color:red;font-size: 30px;" class="card-header">lista utilizadores</div>
+                <div style="text-align:center;font-weight:bold;color:black;font-size: 30px;" class="card-header">lista utilizadores</div>
 
 
 

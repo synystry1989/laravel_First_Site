@@ -32,7 +32,7 @@
                     Socios
                 </a>
 
-                <a class="navbar-brand" href="">
+                <a class="navbar-brand" href="{{ route('editora.index') }}">
                     Editoras
                 </a>
 

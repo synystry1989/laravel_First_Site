@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Edicao do utilizador {{$user->name}}</div>
+                <div style="text-align:center;font-weight:bold;font-size: 20px"class="card-header">Edicao do utilizador {{$user->name}}</div>
 
                 <div class="card-body">
                     <form action="{{route('users.update',$user->id)}}" method="post">
