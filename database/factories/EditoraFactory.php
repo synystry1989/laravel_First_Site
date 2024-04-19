@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
-class SocioFactory extends Factory
+class EditoraFactory extends Factory
 {
     /**
      * The current password being used by the factory.
@@ -24,15 +24,14 @@ class SocioFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => fake()->user_id() ,
-            'name' => fake()->name(),
-            'cc' => fake()->cc(),
-            'morada' => fake()->morada(),
-            'codigo_Postal' => fake()->codigo_Postal(),
-            'localidade' => fake()->localidade(),
-            'email' => fake()->unique()->safeEmail(),
-            'telefone' => fake()->telefone(),
-           
+
+            'nome' => fake()->name(),
+            'morada' => fake()->address(),
+            'telefone' => fake()->numerify('##########'),
+            'contribuinte' => fake()->numerify('##########'),
+
+
+
         ];
     }
 

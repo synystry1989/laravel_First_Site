@@ -20,7 +20,7 @@
 </p>
 
 
-<p class="btn btn-outline-secondary"><a href="{{route('socio.user', Auth::user()->id)}}">listar os meus socios</a>
+<p class="btn btn-outline-secondary"><a href="{{route('socio.user', Auth::user()->id)}}">Listar os meus socios</a>
 </p>
 
 
@@ -85,7 +85,7 @@
 
                             </div>
 
-  
+
 
 
 

@@ -62,50 +62,61 @@ class SocioController extends Controller
         return redirect()->route('socio.create')->with('msg', ('registo efetuado com sucesso'));
     }
 
-    /**
-     * Display the specified resource.
-     * funcao para os meus socios
-     */
+
     public function show(Socio $socio)
     {//caminho view pasta socios ficheiro nome show
         return view('socios.show',['socio' => Socio::findOrFail($socio->id)]);
     }
 
-    // public function showall(Socio $socio)
-    // {//caminho view pasta socios ficheiro nome show
-    //     return view('socios.showAll',['socio'=>$socio]);
-    // }
+    public function show_all($id)
+    {//caminho view pasta socios ficheiro nome show
+
+        //return 'Socio:'.$id->nome;
+
+        //return view('socios.show_all',['socio' => Socio::findOrFail($id)]);
+
+        return view('socios.show_all',['socio' => Socio::findOrFail($id)]);
+    }
 
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Socio $socio)
     {
         return view('socios.edit', ['socio' => Socio::findOrFail($socio->id)]);
-      
+
     }
 
     public function update(Request $request, Socio $socio)
     {
-       
+
 
         $socio->update($request->all());
 
           //redirecionar
         return redirect()->route('socio.show', $socio)->with('msg', ('socio editado com sucesso'));
     }
-
+//socios proprios
      public function confirma_delete(Socio $id){
 
         return view('socios.confirma_delete',['id'=>$id]);
      }
- 
+//socios geral
+     public function confirma_destroy(Socio $id){
+
+        return view('socios.confirma_destroy',['id'=>$id]);
+     }
+//socios proprios
     public function destroySocio(Socio $id)
     {
         $socio = Socio::findOrFail($id->id);
         $socio->delete();
         return redirect()->route('socio.user',  Auth ::user()->id)->with('msg', ('socio eliminado com sucesso'));;
+}
+//socios gerais
+public function Delete(Socio $id)
+    {
+        $socio = Socio::findOrFail($id->id);
+        $socio->delete();
+        return redirect()->route('socio.index')->with('msg', ('socio eliminado com sucesso'));;
 }
 
 }

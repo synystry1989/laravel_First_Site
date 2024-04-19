@@ -42,9 +42,19 @@ Route::middleware('auth')->group(function ()
 Route::get('socios_user/{id}', [SocioController::class,'socios_user'])->name('socio.user');
 // rota delete dos meus socios         nome da funcao em socio controler::class
 Route::get('socio_delete/{id}', [SocioController::class,'destroySocio'])->name('socio.destroySocio');
-
 Route::get('confirma_delete/{id}', [SocioController::class,'confirma_delete'])->name('socio.confirma_delete');
 
+//rota visualizar geral
+Route::get('socio_Show_all/{id}', [SocioController::class,'show_all'])->name('socio.show_all');
+
+//rota confirmar destroy geral
+Route::get('delete_confirmar/{id}', [SocioController::class,'confirma_destroy'])->name('socio.confirma_destroy');
+
+Route::get('socio_destroy/{id}', [SocioController::class,'delete'])->name('socio.delete');
+
+
+
+// rotas editoras
 Route::get('confirma_destroy/{id}', [EditoraController::class,'confirma_destroy'])->name('editora.confirma_destroy');
 
 Route::get('editora_delete/{id}', [EditoraController::class,'delete'])->name('editora.delete');

@@ -25,8 +25,8 @@
       <td>{{$socio->telefone}}</td>
       <!-- vams buscar o nome ao campo user de users -->
       <td>{{$socio->user->name}}</td>
-      <td><a href="{{route('socio.show',$socio->id )}}" class="btn btn-success" >Visualizar</a></td>
-    
+      <td><a href="{{route('socio.show_all',$socio->id )}}" class="btn btn-primary" >Visualizar</a></td>
+
     </tr>
 @endforeach
 

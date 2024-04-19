@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -22,13 +23,13 @@
                             <br>
                             <!-- {{-- <a href="{{route('socio.index')}}" class="btn btn-primary">Voltar para o geral</a> --}} -->
 
-                            <a href="{{ route('socio.user', Auth::user()->id) }}" class="btn btn-primary">Retroceder</a>
 
-                            <a href="{{ route('socio.index') }}" class="btn btn-primary">Voltar para os socios</a>
+
+                            <a href="{{ route('socio.index') }}" class="btn btn-primary">Retroceder</a>
 
                             <td><a href="{{ route('socio.edit', $socio->id) }}"class="btn btn-warning">Editar</a> </td>
 
-                            <td><a href="{{ route('socio.confirma_delete', $socio->id) }}"class="btn btn-danger">Apagar</a>                            </td>
+                            <td><a href="{{ route('socio.confirma_destroy', $socio->id) }}"class="btn btn-danger">Apagar</a>                            </td>
 
 
                             </table>
