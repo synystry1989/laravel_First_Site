@@ -16,7 +16,8 @@
                         @csrf
                         @method('PUT')
 
-                       
+                       <p></p>
+                       <p></p>
                             <h2>Preencha todos os campos</h2>
                             <div class="input-container">
                                 <i class="fa fa-user icon"></i>
