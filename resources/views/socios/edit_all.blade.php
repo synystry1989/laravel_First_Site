@@ -4,16 +4,17 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div id="table1" class="card">
+            <div class="card">
+
 
 <div class="card-body">
-    <form action="{{ route('socio.update', $socio->id) }}" method = "post">
+    <form action="{{ route('socio.update_all', $socio->id) }}" method = "post">
 
         <!-- para as def seguranca temos que acrescentar -->
         @csrf
         @method('PUT')
 
-            <legend style="text-align:center;font-weight:bold;color:black;font-size: 30px">Editar campos</legend>
+            <legend id=""titulo>Editar campos</legend>
 
             @if(session('msg'))
             <p class="btn btn-success">

@@ -45,6 +45,25 @@ Route::get('socio_delete/{id}', [SocioController::class,'destroySocio'])->name('
 
 Route::get('confirma_delete/{id}', [SocioController::class,'confirma_delete'])->name('socio.confirma_delete');
 
+//rota visualizar editar  geral
+Route::get('socio_Show_all/{id}', [SocioController::class,'show_all'])->name('socio.show_all');
+
+Route::get('socio_edit_all/{id}', [SocioController::class, 'edit_all'])->name('socio.edit_all');
+
+Route::put('socio_update_all/{id}', [SocioController::class, 'update_all'])->name('socio.update_all');
+
+//rota confirmar e deletar  scios geral
+Route::get('delete_confirmar/{id}', [SocioController::class,'confirma_destroy'])->name('socio.confirma_destroy');
+
+Route::get('socio_destroy/{id}', [SocioController::class,'delete'])->name('socio.delete');
+
+
+
+// rotas editoras
+Route::get('confirma_destroy/{id}', [EditoraController::class,'confirma_destroy'])->name('editora.confirma_destroy');
+
+Route::get('editora_delete/{id}', [EditoraController::class,'delete'])->name('editora.delete');
+
 Route::resources([
 
     // prefixo "socio" para aceder as rotas

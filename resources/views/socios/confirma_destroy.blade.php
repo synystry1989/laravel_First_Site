@@ -10,10 +10,10 @@
                 <p style="font-size: 20px" >Tem a certeza que pretende eliminar o socio: {{ $id->nome }} ?</p>
 
                 <div class="card-body">
-                     <p><a href="{{ route('socio.destroySocio', $id->id) }}"
-                                        class="btn btn-danger">Apagar</a></p>
+                     <p><a href="{{ route('socio.delete', $id->id) }}"
+                                        class="btn btn-warning">Apagar</a></p>
 
-                                       <a href="{{ route('socio.user', Auth::user()->id) }}" class="btn btn-primary">Retroceder</a>
+                                        <a href="{{ route('socio.index') }}" class="btn btn-primary">Voltar para os socios</a>
                     @if (session('msg'))
                     <p class="btn btn-success">
                         {{ session('msg') }}

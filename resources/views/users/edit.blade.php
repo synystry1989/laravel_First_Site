@@ -5,51 +5,50 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Edicao do utilizador {{$user->name}}</div>
+                <div id="titulo" class="card-header">Edição de {{$user->name}}
 
-                <div class="card-body">
+                </div>
+
+                <div id="table1" class="card-body">
+
                     <form action="{{route('users.update',$user->id)}}" method="post">
 
                         @csrf
                         @method('PUT')
 
+                       
+                            <h2>Preencha todos os campos</h2>
+                            <div class="input-container">
+                                <i class="fa fa-user icon"></i>
 
-                        <div class="form-group">
-                            <label for="nome">Nome</label>
-                            <input type="text" class="form-control" id="nome" aria-describedby="emailHelp" value="{{$user->name}}">
+                                <input class="input-field" type="text" id="nome" value="{{$user->name}}" name="nome">
+                                <i class="fa fa-pen icon"></i>
+                               
+                                <select name="level">
+                                    <option  value="{{$user->level}}" selected disabled > Administrator level </option>
+                                    <option value="user">utilizador</option>
+                                    <option value="admin">administrador</option>
+                                </select>
+                            </div>
 
-                        </div>
-                        <div class="form-group">
-                            <label for="Email">Email address</label>
-                            <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" value="{{$user->email}}">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="Password">Password</label>
-                            <input type="password" class="form-control" id="Password" value="{{$user->password}}">
-                            <br>
-                            <select name="level">
-                                <option value="{{$user->level}}" selected disabled>{{$user->level}}</option>
-                                <option value="user">utilizador</option>
-                                <option value="admin">administrador</option>
-                            </select>
-                            <br>
-                        </div>
-                        <div>
-                        <br>
-                        <br>
-                        <button type="submit" class="btn btn-danger">gravar</button>
-                    </div>
-
+                            <div class="input-container">
+                                <i class="fa fa-envelope icon"></i>
+                                <input class="input-field" type="text" value="{{$user->email}}" name="email">
+                            </div>
+                            <div class="input-container">
+                                <i class="fa fa-key icon"></i>
+                                <input class="input-field" type="password" value="{{$user->password}}" name="psw">
+                            </div>
+                            <p id="botoesFundo"><button  type="submit" class="btn btn-danger">Gravar</button></p> 
+                        </form>
+                       
+                        <P id="botoesFundo"><a href="{{route('users.index')}}" style="background-color:#add8e6" class="btn btn-primary">Retroceder</a></p>
                     </form>
-
-
-
-
-
                 </div>
+
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

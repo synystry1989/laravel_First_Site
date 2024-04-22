@@ -27,14 +27,14 @@ class UserController extends Controller
     {
         User::findOrFail($id->id)->update($id->all());
         //redirecioanr
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('msg', ('utilizador editado com sucesso'));
 }
 
 public function delete(Request $id)
 {
 
     User::findOrFail($id->id)->delete();
-    return redirect()->route('users.index');
+    return redirect()->route('users.index')->with('msg', ('utilizador apagado com sucesso'));
 
 }
 }

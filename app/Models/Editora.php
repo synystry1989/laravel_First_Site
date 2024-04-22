@@ -12,7 +12,7 @@ class Editora extends Model
 
 
     protected $fillable = [
-
+        "id",
         "nome",
         "morada",
         "telefone",
