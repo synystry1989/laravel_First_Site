@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Criar Editora</div>
+                <div style="text-align:center;font-weight:bold;color:black;font-size: 30px " class="card-header">Criar Editora</div>
                 <!-- para aparecer as mensagens -->
 @if(session('msg'))
 <p class="btn btn-success">
@@ -20,14 +20,15 @@
 <!-- <p class="btn btn-outline-secondary"><a href="{{route('socio.user', Auth::user()->id)}}">listar os meus socios</a>  -->
 </p>
 
-                <div class="card-body">
+                <div style="font-weight:bold;font-size: 20px" class="card-body">
                     <form action="{{route('editora.store')}}" method="post">
                         <!-- para as def seguranca temos que acrescentar -->
                         @csrf
                         <fieldset>
 
 
-                            <legend>Preencha todos os campos</legend>
+                            <legend >Preencha todos os campos</legend>
+                            <br>
 
                             <div>
                                 <label for="id">Id</label>
@@ -63,7 +64,7 @@
 
 
                             <div>
-                                <button type="submit" class="btn btn-primary" value="gravar">Gravar</button>
+                                <button type="submit" class="btn btn-danger" value="gravar">Gravar</button>
                             </div>
                             <br>
                             <div style ="text-align: center;">

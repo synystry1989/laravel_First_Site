@@ -23,7 +23,9 @@ class SocioController extends Controller
          $socios = $user->socios()->get();
 
         return view('socios.socios_user',['socios'=>$socios]);
-    }
+  
+   
+}
 
     public function index()
     {
@@ -85,6 +87,12 @@ class SocioController extends Controller
 
     }
 
+    public function edit_all($id)
+    {
+        return view('socios.edit_all', ['socio' => Socio::findOrFail($id)]);
+
+    }
+
     public function update(Request $request, Socio $socio)
     {
 
@@ -93,6 +101,16 @@ class SocioController extends Controller
 
           //redirecionar
         return redirect()->route('socio.show', $socio)->with('msg', ('socio editado com sucesso'));
+    }
+
+    public function update_all(Request $request, Socio $id)
+    {
+
+
+        $id->update($request->all());
+
+          //redirecionar
+        return redirect()->route('socio.show_all', $id)->with('msg', ('socio editado com sucesso'));
     }
 //socios proprios
      public function confirma_delete(Socio $id){

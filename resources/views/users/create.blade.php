@@ -71,10 +71,7 @@
 
 
                             <div>
-                                <button type="submit" class="btn btn-primary" value="gravar">Gravar</button>
-
-                                <button type="reset" class="btn btn-primary" value="limpar">limpar</button>
-
+                                <button type="submit" class="btn btn-danger" value="gravar">Gravar</button>
 
                             </div>
 

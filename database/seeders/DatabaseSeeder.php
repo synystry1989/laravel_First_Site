@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         User::factory(30)->create();
 //criar editoras aleatorios
         Editora::factory(30)->create();
+        Socio::factory(30)->create();
 
         User::factory()->create([
             'name' => 'Test User',

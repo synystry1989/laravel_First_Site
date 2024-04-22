@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+<body>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -13,28 +16,36 @@
 </p >
 @endif
 
-
-
-
-<p class="btn btn-outline-secondary"><a href="{{route('socio.index')}}" >Listar todos os Sócios</a>
-</p>
-
-
-<p class="btn btn-outline-secondary"><a href="{{route('socio.user', Auth::user()->id)}}">Listar os meus socios</a>
-</p>
-
-
-
-
-                <div class="card-body">
+                <div style="font-weight:bold;font-size: 20px" class="card-body">
                     <form action="{{route('socio.store')}}" method="post">
                         <!-- para as def seguranca temos que acrescentar -->
                         @csrf
                         <fieldset>
+                          <br>
+                            <form action="/action_page.php">
+  <h2>Preencha todos os campos</h2>
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" placeholder="Username" name="usrnm">
+  </div>
 
+  <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input class="input-field" type="text" placeholder="Email" name="email">
+  </div>
 
-                            <legend>Preencha todos os campos</legend>
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" placeholder="Password" name="psw">
+  </div>
+
+  <button type="submit" class="btn">Register</button>
+</form>
                             <div>
+
+
+
+
                                 <!-- autfocus o cursor vai logo para o input
                         colocar value no campo gestor para colocar o campo id user
                     campo escondido
@@ -80,7 +91,7 @@
 
 
                             <div>
-                                <button type="submit" class="btn btn-primary" value="gravar">Gravar</button>
+                                <button type="submit" class="btn btn-danger" value="gravar">Gravar</button>
 
 
                             </div>
@@ -104,4 +115,10 @@
         </div>
     </div>
 </div>
+
+    
+</body>
+
 @endsection
+
+
