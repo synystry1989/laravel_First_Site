@@ -40,10 +40,12 @@
                                 <i class="fa fa-key icon"></i>
                                 <input class="input-field" type="password" value="{{$user->password}}" name="psw">
                             </div>
-                            <p id="botoesFundo"><button  type="submit" class="btn btn-danger">Gravar</button></p> 
+                            <p id="botoesFundo"><button  type="submit" class="btn btn-danger">Gravar</button></p>
+                           
                         </form>
+                         
                        
-                        <P id="botoesFundo"><a href="{{route('users.index')}}" style="background-color:#add8e6" class="btn btn-primary">Retroceder</a></p>
+                        <P id="botoesFundo"><a href="{{route('users.index')}}"  class="btn btn-primary">Retroceder</a></p>
                     </form>
                 </div>
 

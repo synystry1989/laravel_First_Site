@@ -17,6 +17,17 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#search").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("tbody tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
 
 
 
@@ -37,7 +48,7 @@
         .icon {
             padding: 15px 15px;
             background: #add8e6;
-            color: white;
+            color: black;
             min-width: 50px;
             text-align: center;
             border-top-left-radius: 10px;
@@ -77,7 +88,7 @@
         #botoesFundo{
 
             padding-left: 200px;
-            padding-right:200px
+            padding-right: 200px;
         }
 
 
@@ -96,11 +107,16 @@
             text-align: center;
             font-weight: bold;
             color: white;
-            font-size: 30px
+            font-size: 30px;
         }
 
         #search {
             background-color:white ;
+        }
+
+        #p1{
+            font-weight:bold;
+            font-size:20px
         }
         
         body {

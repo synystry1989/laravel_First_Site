@@ -4,16 +4,19 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div style="text-align:center;font-weight:bold;color:black;font-size: 30px;" class="card-header">Confirmar eliminacao</div>
+            <div id="table1" class="card">
+                <div id="titulo" class="card-header">Confirmar eliminacao</div>
+                <p></p>
+                <p></p>
+                <p></p>
 
-                <p style="font-size: 20px" >Tem a certeza que pretende eliminar o socio: {{ $id->nome }} ?</p>
+                <h2>Tem a certeza que pretende eliminar o socio: {{ $id->nome }}?</h2>
 
-                <div class="card-body">
-                     <p><a href="{{ route('socio.delete', $id->id) }}"
-                                        class="btn btn-warning">Apagar</a></p>
+                <div id="botoesFundo"  class="card-body">
+                    <a href="{{ route('socio.delete', $id->id) }}" class="btn btn-danger">Apagar</a>
+                    <p></p>
 
-                                        <a href="{{ route('socio.index') }}" class="btn btn-primary">Voltar para os socios</a>
+                    <a href="{{route('socio.show_all',$id )}}" class="btn btn-primary">Retroceder</a>
                     @if (session('msg'))
                     <p class="btn btn-success">
                         {{ session('msg') }}

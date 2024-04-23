@@ -1,14 +1,4 @@
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $("#search").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("tbody tr").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    });
-</script>
+
 @extends('layouts.app')
 
 @section('content')
@@ -34,9 +24,9 @@
                                 </svg></button>
                         </div>
 
-                        <input type="text" class="form-control" placeholder="Utilizadores">
+                        <input type="text" id="search" class="form-control" placeholder="Utilizadores">
 
-                        <div id="caixa1" class="card-header ">Utilizadores registados: {{count($users)}}
+                        <div id="caixa1" class="card-header ">Utilizadores registados: {{$users->total()}}
                         </div>
 
                     </div>

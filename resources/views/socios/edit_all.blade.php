@@ -1,80 +1,89 @@
 @extends('layouts.app')
 
 @section('content')
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div id="table1" class="card">
 
+                <legend id="titulo">Editar Socio</legend>
 
-<div class="card-body">
-    <form action="{{ route('socio.update_all', $socio->id) }}" method = "post">
+                @if(session('msg'))
+                <p class="btn btn-success">
+                    {{session('msg')}}
+                </p>
+                @endif
 
-        <!-- para as def seguranca temos que acrescentar -->
-        @csrf
-        @method('PUT')
+                <div id="table1" class="card-body">
+                    <form action="{{ route('socio.update_all', $socio->id) }}" method="post">
+                        <!-- para as def seguranca temos que acrescentar -->
+                        <!-- para as def seguranca temos que acrescentar -->
+                        @csrf
+                        @method('PUT')
 
-            <legend id=""titulo>Editar campos</legend>
+                       <br>
 
-            @if(session('msg'))
-            <p class="btn btn-success">
-            {{session('msg')}}
-            </p >
-            @endif
+                        <h2>Preencha todos os campos</h2>
 
+                        <div class="input-container">
 
-            <!-- autfocus o cursor vai logo para o input
-                        colocar value no campo gestor para colocar o campo id user
-                    campo escondido-->
+                            <input class="input-field" type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                        </div>
+                        <div class="input-container">
+                            <i class="fa fa-user icon"></i>
+                            <input class="input-field" type="text" value="{{$socio->nome}}" name="nome" id="nome" autofocus>
+                        </div>
 
-            <div>
-                <label for="nome">Nome</label>
-                <!-- autfocus o cursor vai logo para o input  require obriga a ser preenchido-->
-                <input class="form-control mb-2" type="text" name="nome" id="nome" value="{{$socio->nome}}" autofocus>
+                        <div class="input-container">
+                            <i class="fa fa-envelope icon"></i>
+                            <input class="input-field" type="email" value="{{$socio->email}}" name="email" id="email">
+                        </div>
+
+                        <div class="input-container">
+                            <i class="fa fa-phone icon"></i>
+                            <input class="input-field" type="telefone" value="{{$socio->telefone}}" name="telefone">
+                        </div>
+
+                        <div class="input-container">
+                            <i class="fa fa-address-card icon"></i>
+                            <input class="input-field" type="text" value="{{$socio->cc}}" name="cc" id="cc">
+                        </div>
+
+                        <div class="input-container">
+                            <i class="fa fa-house icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                    <path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
+                                </svg></i>
+                            <input class="input-field" type="text" value="{{$socio->morada}}" name="morada" id="morada">
+                        </div>
+
+                        <div class="input-container">
+                            <i class="fa fa-city icon"></i>
+                            <input class="input-field" type="text" value="{{$socio->localidade}}" name="localidade" id="localidade">
+                        </div>
+
+                        <div class="input-container">
+                            <i class="fa fa-usps icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                    <path d="M460.3 241.7c25.8-41.3 15.2-48.8-11.7-48.8h-27c-.1 0-1.5-1.4-10.9 8-11.2 5.6-37.9 6.3-37.9 8.7 0 4.5 70.3-3.1 88.1 0 9.5 1.5-1.5 20.4-4.4 32-.5 4.5 2.4 2.3 3.8 .1zm-112.1 22.6c64-21.3 97.3-23.9 102-26.2 4.4-2.9-4.4-6.6-26.2-5.8-51.7 2.2-137.6 37.1-172.6 53.9l-30.7-93.3h196.6c-2.7-28.2-152.9-22.6-337.9-22.6L27 415.8c196.4-97.3 258.9-130.3 321.2-151.5zM94.7 96c253.3 53.7 330 65.7 332.1 85.2 36.4 0 45.9 0 52.4 6.6 21.1 19.7-14.6 67.7-14.6 67.7-4.4 2.9-406.4 160.2-406.4 160.2h423.1L549 96z" />
+                                </svg></i>
+                            <input class="input-field" type="text" value="{{$socio->codigo_Postal}}" name="codigo_Postal" id="codigo_Postal">
+                        </div>
+
+                        <div id="botoesFundo">
+                            <button type="submit" class="btn btn-danger">Gravar</button>
+                            <p></p>
+
+                        </div>
+                    </form>
+                    <div id="botoesFundo">
+                        <a href="{{route('socio.show_all',$socio->id )}}" class="btn btn-primary">Retroceder</a>
+                    </div>
+                </div>
+
             </div>
-            <div>
-                <label for="cc">cartao cidadao</label>
-                <!-- autfocus o cursor vai logo para o input -->
-                <input class="form-control mb-2" type="text" name="cc" id="cc" value="{{$socio->cc}}">
-            </div>
-
-            <div>
-                <label for="morada">Morada</label>
-                <!-- autfocus o cursor vai logo para o input -->
-                <input class="form-control mb-2" type="text" name="morada" id="morada" value="{{$socio->morada}}">
-            </div>
-            <div>
-                <label for="codigo_Postal">codigo postal</label>
-                <!-- autfocus o cursor vai logo para o input -->
-                <input class="form-control mb-2" type="text" name="codigo_Postal" id="codigo_Postal" value="{{$socio->codigo_Postal}}">
-            </div>
-
-            <div>
-                <label for="localidade">localidade</label>
-                <!-- autfocus o cursor vai logo para o input -->
-                <input class="form-control mb-2" type="text" name="localidade" id="localidade" value="{{$socio->localidade}}">
-            </div>
-            <div>
-                <label for="email">email</label>
-                <!-- autfocus o cursor vai logo para o input -->
-                <input class="form-control mb-2" type="email" name="email" id="email" value="{{$socio->email}}">
-            </div>
-            <div>
-                <label for="telefone">telemovel</label>
-                <!-- autfocus o cursor vai logo para o input -->
-                <input class="form-control mb-2" type="text" name="telefone" value="{{$socio->telefone}}" id="telefone">
-            </div>
-
-
-            <div>
-                <button type="submit" class="btn btn-primary" value="gravar">Gravar</button>
-
-               
-
-
-            </div>
-    </form>
-
+        </div>
+    </div>
 
 </div>
 
