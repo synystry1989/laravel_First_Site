@@ -118,7 +118,7 @@
         }
 
         body {
-            background-image: url('{{ asset(' imagens/img1.png') }}');
+            background-image: url('{{ asset('imagens/img1.png') }}');
             background-repeat: no-repeat;
             background-size: cover;
         }
