@@ -148,7 +148,9 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{route('socio.create')}}">Criar Socio</a>
                         <a class="dropdown-item" href="{{route('socio.index')}}">Lista Geral Socios</a>
+                        @auth
                         <a class="dropdown-item" href="{{route('socio.user', Auth::user()->id)}}">Minha Lista Socios</a>
+                        @endauth
 
                     </div>
                 </div>
