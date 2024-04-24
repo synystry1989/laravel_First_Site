@@ -1,13 +1,13 @@
 
-@extends('layouts.app')
+@extends('site.layout')
 
 @section('content')
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-      
-        
+
+
         <div id="titulo" class="card-header">Lista de Sócios</div>
         @if(session('msg'))
             <p class="btn btn-success">
@@ -28,7 +28,7 @@
             <div id="caixa1" class="card-header ">Socios registados: {{$socios->total()}}
             </div>
             <p></p>
-          
+
 
           </div>
           <p></p>
