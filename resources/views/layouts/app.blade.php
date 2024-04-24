@@ -41,7 +41,7 @@
             display: flex;
             width: 100%;
             margin-bottom: 15px;
-            
+
         }
 
         /* estilo para os icones do formulario */
@@ -59,16 +59,16 @@
             width: 100%;
             padding: 10px;
             outline: none;
-            
+
         }
 
         .input-field:focus {
             border: 2px solid #F4A460;
-            
+
         }
 
         .btn {
-            
+
             color: white;
             padding: 15px 20px;
             border: none;
@@ -118,7 +118,7 @@
             font-weight:bold;
             font-size:20px
         }
-        
+
         body {
             background-image: url('{{ asset('imagens/img1.png') }}');
             background-repeat: no-repeat;
@@ -201,7 +201,7 @@
                                 </form>
                             </div>
 
-                           
+
                         </li>
                         @endguest
                     </ul>
