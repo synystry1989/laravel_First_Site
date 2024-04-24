@@ -151,7 +151,9 @@
                         @auth
                         <a class="dropdown-item" href="{{route('socio.user', Auth::user()->id)}}">Minha Lista Socios</a>
                         @endauth
-
+                    <a class="dropdown-item" href="{{ route('site.servicos') }}">Lista Geral Socios</a>
+                    <a class="dropdown-item" href="{{route('site.galeria')}}">Galeria</a>
+                    <a class="dropdown-item" href="{{ route('site.contacto') }}">Lista Geral Socios</a>
                     </div>
                 </div>
 
