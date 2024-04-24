@@ -18,18 +18,16 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $("#search").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("tbody tr").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    <script>
+        $(document).ready(function() {
+            $("#search").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("tbody tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
             });
         });
-    });
-</script>
-
-
+    </script>
 
     <style>
         * {
@@ -85,7 +83,9 @@
             padding: 5px 7px;
         }
 
-        #botoesFundo{
+
+
+        #botoesFundo {
 
             padding-left: 200px;
             padding-right: 200px;
@@ -110,22 +110,107 @@
             font-size: 30px;
         }
 
-        #search {
-            background-color:white ;
-        }
 
-        #p1{
-            font-weight:bold;
-            font-size:20px
+
+        #p1 {
+            font-weight: bold;
+            font-size: 20px
         }
 
         body {
-            background-image: url('{{ asset('imagens/img1.png') }}');
+            background-image: url('{{ asset(' imagens/img1.png') }}');
             background-repeat: no-repeat;
             background-size: cover;
         }
 
+        @import url('https://fonts.googleapis.com/css?family=Roboto:700');
 
+
+
+        p {
+            text-shadow: 0 0 7px rgba(255, 255, 255, .3), 0 0 3px rgba(255, 255, 255, .3);
+        }
+
+        #container {
+            color: #e5e5e5;
+            font-size: 2.26rem;
+            text-transform: uppercase;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .animation {
+            height: 50px;
+            overflow: hidden;
+            margin-left: 1rem;
+        }
+
+        .animation>div>div {
+            padding: 0.25rem 0.75rem;
+            height: 2.81rem;
+            margin-bottom: 2.81rem;
+            display: inline-block;
+        }
+
+        .animation div:first-child {
+            animation: text-animation 8s infinite;
+        }
+
+        #firstdiv {
+            background-color: #20a7d8;
+        }
+
+        #seconddiv {
+            background-color: #CD921E;
+        }
+
+        #thirddiv {
+            background-color: #c10528;
+        }
+
+        @keyframes text-animation {
+            0% {
+                margin-top: 0;
+            }
+
+            10% {
+                margin-top: 0;
+            }
+
+            20% {
+                margin-top: -5.62rem;
+            }
+
+            30% {
+                margin-top: -5.62rem;
+            }
+
+            40% {
+                margin-top: -11.24rem;
+            }
+
+            60% {
+                margin-top: -11.24rem;
+            }
+
+            70% {
+                margin-top: -5.62rem;
+            }
+
+            80% {
+                margin-top: -5.62rem;
+            }
+
+            90% {
+                margin-top: 0;
+            }
+
+            100% {
+                margin-top: 0;
+            }
+        }
     </style>
 
 </head>
@@ -137,9 +222,15 @@
             <div class="container">
 
 
-                <button><a class="navbar-brand" href="{{ route('users.index') }}">
+                <div class="btn-group" role="group" aria-label="Vertical button group">
+                    <button style="background-color: white; font-size: 20px; color:black" type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Utilizadores
-                    </a></button>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ route('users.index') }}">Lista Utilizadores</a>
+
+                    </div>
+                </div>
 
                 <div class="btn-group" role="group" aria-label="Vertical button group">
                     <button style="background-color: white; font-size: 20px; color:black" type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -151,16 +242,30 @@
                         @auth
                         <a class="dropdown-item" href="{{route('socio.user', Auth::user()->id)}}">Minha Lista Socios</a>
                         @endauth
-                    <a class="dropdown-item" href="{{ route('site.servicos') }}">Lista Geral Socios</a>
-                    <a class="dropdown-item" href="{{route('site.galeria')}}">Galeria</a>
-                    <a class="dropdown-item" href="{{ route('site.contacto') }}">Lista Geral Socios</a>
+
                     </div>
                 </div>
 
-                <button> <a class="navbar-brand" href="{{ route('editora.index') }}">
+                <div class="btn-group" role="group" aria-label="Vertical button group">
+                    <button style="background-color: white; font-size: 20px; color:black" type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Editoras
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ route('editora.index') }}">Lista Editoras</a>
+                        <a class="dropdown-item" href="{{route('editora.create' )}}">Adicionar Editora</a>
+
+                    </div>
+                </div>
+
+                <div>
+
+                    <a style="font-size: 20px;" style="background-color: white; font-size: 20px; color:black" class="navbar-brand" href="{{ route('site.galeria') }}">
+                        galeria
                     </a>
-                </button>
+                    <a style="font-size: 20px;" class="navbar-brand" href="{{ route('site.servicos') }}">
+                        serviços
+                    </a>
+                </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -190,9 +295,9 @@
                         @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                               <p style="text-align: center;"> {{ Auth::user()->name }}  &nbsp&nbsp&nbsp  {{ Auth::user()->email }}    </p>
-                             </a>
-                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <p style="text-align: center;"> {{ Auth::user()->name }} &nbsp&nbsp&nbsp {{ Auth::user()->email }} </p>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
