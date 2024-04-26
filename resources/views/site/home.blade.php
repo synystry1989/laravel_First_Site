@@ -7,7 +7,7 @@
 
 <div class="row">
 
-    <img src="{{ asset('images/img1.png') }}" class="bg_img" alt="A carregar">
+   
 </div>
 
 <main id="container">

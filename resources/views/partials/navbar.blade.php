@@ -138,41 +138,8 @@ n sei se e correto mas no layout blade coloquei tudo entendo que o objetivo seri
             <div class="container">
 
 
-                <div class="btn-group" role="group" aria-label="Vertical button group">
-                    <button style="background-color: white; font-size: 20px; color:black" type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Utilizadores
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('users.index') }}">Lista Utilizadores</a>
-
-                    </div>
-                </div>
-
-                <div class="btn-group" role="group" aria-label="Vertical button group">
-                    <button style="background-color: white; font-size: 20px; color:black" type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Socios
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{route('socio.create')}}">Criar Socio</a>
-                        <a class="dropdown-item" href="{{route('socio.index')}}">Lista Geral Socios</a>
-                        @auth
-                        <a class="dropdown-item" href="{{route('socio.user', Auth::user()->id)}}">Minha Lista Socios</a>
-                        @endauth
-
-                    </div>
-                </div>
-
-                <div class="btn-group" role="group" aria-label="Vertical button group">
-                    <button style="background-color: white; font-size: 20px; color:black" type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Editoras
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('editora.index') }}">Lista Editoras</a>
-                        <a class="dropdown-item" href="{{route('editora.create' )}}">Adicionar Editora</a>
-
-                    </div>
-                </div>
-
+            
+            
                 <div>
 
                     <a style="font-size: 40px;" style="background-color: white; font-size: 20px; color:black" class="navbar-brand" href="{{ route('site.galeria') }}">
@@ -233,7 +200,7 @@ n sei se e correto mas no layout blade coloquei tudo entendo que o objetivo seri
         </nav>
 
         <main class="py-4">
-            @yield('content')
+         
         </main>
     </div>
 </body>
