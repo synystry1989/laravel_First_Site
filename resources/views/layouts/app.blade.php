@@ -72,7 +72,15 @@
                     
                 </div>
 
-               
+                <div>
+
+                    <a style="background-color: white; font-size: 20px; " class="navbar-brand" href="{{ route('site.galeria') }}">
+                        galeria
+                    </a>
+                    <a style="background-color: white; font-size: 20px;" class="navbar-brand" href="{{ route('site.servicos') }}">
+                        serviços
+                    </a>
+                </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -124,7 +132,7 @@
         </nav>
 
         <main class="py-4">
-         
+            @yield('content')
         </main>
     </div>
 </body>
