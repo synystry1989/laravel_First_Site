@@ -179,4 +179,10 @@ p {
     100% {
         margin-top: 0;
     }
+
+}
+
+.lorem {
+    margin: 5%;
+    width: 90%;
 }

@@ -42,6 +42,7 @@
                         <a class="dropdown-item" href="{{ route('users.index') }}">Lista Utilizadores</a>
 
                     </div>
+                    <section> &nbsp &nbsp</section>
                 </div>
 
                 <div class="btn-group" role="group" aria-label="Vertical button group">
@@ -56,6 +57,7 @@
                         @endauth
 
                     </div>
+                    <section> &nbsp &nbsp</section>
                 </div>
 
                 <div class="btn-group" role="group" aria-label="Vertical button group">
@@ -67,6 +69,7 @@
                         <a class="dropdown-item" href="{{route('editora.create' )}}">Adicionar Editora</a>
 
                     </div>
+                    
                 </div>
 
                 <div>
