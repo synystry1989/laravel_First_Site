@@ -1,6 +1,3 @@
-<!-- nao estou a usar pois nao entendi bem onde ir buscar a navbar para utilizar 
-n sei se e correto mas no layout blade coloquei tudo entendo que o objetivo seria ter duas nav e alternar entre mas nao consegui acompanhar -->
-
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -13,120 +10,10 @@ n sei se e correto mas no layout blade coloquei tudo entendo que o objetivo seri
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#search").on("keyup", function() {
-                var value = $(this).val().toLowerCase();
-                $("tbody tr").filter(function() {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-        });
-    </script>
 
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        /* estilo do input container */
-        .input-container {
-            display: flex;
-            width: 100%;
-            margin-bottom: 15px;
-
-        }
-
-        /* estilo para os icones do formulario */
-        .icon {
-            padding: 15px 15px;
-            background: #add8e6;
-            color: black;
-            min-width: 50px;
-            text-align: center;
-            border-top-left-radius: 10px;
-        }
-
-        /* estilo dos campos de input */
-        .input-field {
-            width: 100%;
-            padding: 10px;
-            outline: none;
-
-        }
-
-        .input-field:focus {
-            border: 2px solid #F4A460;
-
-        }
-
-        .btn {
-
-            color: white;
-            padding: 15px 20px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            opacity: 0.9;
-        }
-
-        .btn:hover {
-            opacity: 1;
-        }
-
-        #botoes {
-            padding: 5px 7px;
-        }
-
-
-
-        #botoesFundo {
-
-            padding-left: 200px;
-            padding-right: 200px;
-        }
-
-
-        #caixa1 {
-            border-radius: 10px;
-            background-color: #add8e6;
-
-        }
-
-        #table1 {
-            background-color: #48D1CC;
-        }
-
-        #titulo {
-            background-color: #F08080;
-            text-align: center;
-            font-weight: bold;
-            color: white;
-            font-size: 30px;
-        }
-
-        #search {
-            background-color: white;
-        }
-
-        #p1 {
-            font-weight: bold;
-            font-size: 20px
-        }
-
-        body {
-            background-image: url('{{ asset('imagens/img1.png') }}');
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+      
     </style>
 
 </head>
@@ -175,10 +62,10 @@ n sei se e correto mas no layout blade coloquei tudo entendo que o objetivo seri
 
                 <div>
 
-                    <a style="font-size: 40px;" style="background-color: white; font-size: 20px; color:black" class="navbar-brand" href="{{ route('site.galeria') }}">
+                    <a style="font-size: 20px;" style="background-color: white; font-size: 20px; color:black" class="navbar-brand" href="{{ route('site.galeria') }}">
                         galeria
                     </a>
-                    <a  class="navbar-brand" href="{{ route('site.servicos') }}">
+                    <a style="font-size: 20px;" class="navbar-brand" href="{{ route('site.servicos') }}">
                         serviços
                     </a>
                 </div>
@@ -233,7 +120,7 @@ n sei se e correto mas no layout blade coloquei tudo entendo que o objetivo seri
         </nav>
 
         <main class="py-4">
-            @yield('content')
+         
         </main>
     </div>
 </body>
