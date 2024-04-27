@@ -10,79 +10,60 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    @vite(['resources/css/cssNavBlade.css', 'resources/css/cssNavBlade.css'])
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    @vite(['resources/js/searchBar.js', 'resources/js/searchBar.js'])
 
 
-    <style>
-      
-    </style>
+
+
 
 </head>
 
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+
+        <nav style="text-align: left;" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+
             <div class="container">
 
+                <div class="container">
 
-                <div class="btn-group" role="group" aria-label="Vertical button group">
-                    <button style="background-color: white; font-size: 20px; color:black" type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Utilizadores
+                    <button class="btn btn-outline secondary">
+                        <a style="background-color: white; font-size: 20px; " class="navbar-brand" href="{{ route('site.home') }}">
+                            Home
+                        </a>
                     </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('users.index') }}">Lista Utilizadores</a>
-
-                    </div>
                 </div>
+                <div class="container">
 
-                <div class="btn-group" role="group" aria-label="Vertical button group">
-                    <button style="background-color: white; font-size: 20px; color:black" type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Socios
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{route('socio.create')}}">Criar Socio</a>
-                        <a class="dropdown-item" href="{{route('socio.index')}}">Lista Geral Socios</a>
-                        @auth
-                        <a class="dropdown-item" href="{{route('socio.user', Auth::user()->id)}}">Minha Lista Socios</a>
-                        @endauth
+                    <a style="background-color: white; font-size: 20px; " class="navbar-brand" href="{{ route('site.galeria') }}">
+                        Galeria
+                    </a>
 
-                    </div>
-                </div>
+                    <a style="background-color: white; font-size: 20px;" class="navbar-brand" href="{{ route('site.servicos') }}">
+                        Serviços
+                    </a>
 
-                <div class="btn-group" role="group" aria-label="Vertical button group">
-                    <button style="background-color: white; font-size: 20px; color:black" type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Editoras
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ route('editora.index') }}">Lista Editoras</a>
-                        <a class="dropdown-item" href="{{route('editora.create' )}}">Adicionar Editora</a>
 
-                    </div>
+                    <a style="background-color: white; font-size: 20px; " class="navbar-brand" href="{{ route('site.contacto') }}">
+                        Contactos
+                    </a>
+
                 </div>
 
                 <div>
-
-                    <a style="font-size: 20px;" style="background-color: white; font-size: 20px; color:black" class="navbar-brand" href="{{ route('site.galeria') }}">
-                        galeria
-                    </a>
-                    <a style="font-size: 20px;" class="navbar-brand" href="{{ route('site.servicos') }}">
-                        serviços
-                    </a>
-                </div>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
 
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
+                        <!-- consegui fazer desaparecer os botoes login desta nav nova e aparecer so quando nao tem login feito e vice versa os butoes de logout e nome aparecem so com login feito -->
                         @guest
                         @if (Route::has('login'))
                         <li class="nav-item">
@@ -90,37 +71,42 @@
                         </li>
                         @endif
 
+
+
                         @if (Route::has('register'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                         @endif
-                        @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <p style="text-align: center;"> {{ Auth::user()->name }} &nbsp&nbsp&nbsp {{ Auth::user()->email }} </p>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-
-
-                        </li>
                         @endguest
+
+                        @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">{{ Auth::user()->email }}</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
+                        </li>
+                        @endauth
                     </ul>
+
                 </div>
+
+
+
+
+
             </div>
         </nav>
 
         <main class="py-4">
-         
+    
         </main>
     </div>
 </body>

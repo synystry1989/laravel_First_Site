@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class NavigationController extends Controller
 {
     public function home(){
-        return view('site.home');
+        return view('home');
     }
 
     public function contacto(){
