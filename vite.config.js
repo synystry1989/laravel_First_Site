@@ -7,6 +7,9 @@ export default defineConfig({
             input: [
                 'resources/sass/app.scss',
                 'resources/js/app.js',
+                'resources/js/searchBar.js',
+                'resources/css/app.css',
+                'resources/css/cssNavBlade.css',
             ],
             refresh: true,
         }),
